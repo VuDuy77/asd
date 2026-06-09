@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zombie Survival</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gc" width="680" height="420"></canvas>
+<div id="hud">
+  <span>❤️<span id="hHp" style="color:#e24b4a">100</span><span id="hAr" style="color:#5599ff;display:none"> 🛡<span id="hArV">0</span></span></span>
+  <span id="hWv" style="color:#e24b4a">WAVE 1</span>
+  <span>🔫<span id="hAm" style="color:#ef9f27">12/120</span></span>
+  <span style="color:#ef9f27">⚡<span id="hSc">0</span></span>
+</div>
+<div id="hud2">
+  <span>🌀<span id="hCo" style="color:#ffd700">0</span>xu</span>
+  <span id="hWp" style="color:#88aaff">🔫 Pistol</span>
+  <span id="hKl" style="color:#ff6644">☠0</span>
+  <span style="color:#333;font-size:10px">[1]súng [2]cận chiến [T]shop [K]ngủ [G]shop CK [R]nạp đạn [F]kho đồ [H]chế tạo</span>
+</div>
+<div id="msg">Chọn chế độ: nhấn nút bên dưới hoặc bàn phím</div>
+<div id="ctrl">
+  <div class="dpad">
+    <div></div><div class="btn" id="bW">▲</div><div></div>
+    <div class="btn" id="bA">◀</div><div class="btn" id="bS">▼</div><div class="btn" id="bD">▶</div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+    <button id="bShoot">🔫</button>
+    <div style="display:flex;gap:4px">
+      <button id="bReload">↺</button>
+      <button id="bShop">🏪</button>
+      <button id="bSleep" style="width:44px;height:44px;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;background:#080818;border:1px solid #2244aa;color:#88aaff;font-family:monospace">K</button>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:4px">
+    <div class="btn" style="width:48px;height:34px" id="bQL">⟵</div>
+    <div class="btn" style="width:48px;height:34px" id="bQR">⟶</div>
+  </div>
+</div>
+<div id="shopOv">
+  <div id="shopBox">
+    <h2>⚔ CỬA HÀNG NPC ⚔</h2>
+    <div class="scr">🌀 Xu Clau: <span id="sCo">0</span></div>
+    <div class="sg" id="sGr"></div>
+    <div id="codeBox">
+      <input id="codeInput" type="text" placeholder="🔑 Nhập mã code..." maxlength="30" autocomplete="off" spellcheck="false"/>
+      <button id="codeBtn">ĐỔI</button>
+    </div>
+    <div id="codeMsg"></div>
+    <button id="bClose">✕ ĐÓNG (Esc)</button>
+  </div>
+</div>
+
+<!-- MELEE SHOP OVERLAY -->
+<div id="meleeShopOv" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:51;align-items:center;justify-content:center;">
+  <div id="meleeShopBox" style="background:#0a0a0a;border:1px solid #442200;border-radius:10px;padding:14px;width:94%;max-width:640px;max-height:92vh;overflow-y:auto;">
+    <h2 style="color:#ff6622;font-size:15px;text-align:center;margin-bottom:3px;letter-spacing:2px;">⚔️ NGƯỜI BÁN VŨ KHÍ CẬN CHIẾN ⚔️</h2>
+    <div style="text-align:center;color:#ffd700;font-size:12px;margin-bottom:10px;">🌀 Xu Clau: <span id="msCo">0</span></div>
+    <div style="text-align:center;color:#aaa;font-size:10px;margin-bottom:8px;">Vũ khí đang cầm: <span id="msCurWeapon" style="color:#ff9944;">Không có</span></div>
+    <div class="sg" id="msGr"></div>
+    <button id="bMeleeClose" style="background:#1a0808;border:1px solid #883030;color:#e24b4a;font-size:11px;padding:5px 20px;border-radius:6px;cursor:pointer;margin-top:10px;width:100%;">✕ ĐÓNG (Esc)</button>
+  </div>
+</div>
+
+<script src="map.js"></script>
+<script src="audio.js"></script>
+<script src="data.js"></script>
+<script src="inventory.js"></script>
+<script src="gameplay.js"></script>
+<script src="shop.js"></script>
+<script src="input.js"></script>
+<script src="render.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
